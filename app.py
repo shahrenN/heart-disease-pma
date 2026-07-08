@@ -90,6 +90,15 @@ cp = st.sidebar.selectbox(
     [0,1,2,3]
 )
 
+
+prediction = model.predict()
+
+if prediction[0] == 1:
+    st.error("Heart Disease Risk Detected")
+else:
+    st.success("Low Risk")
+
+
 risk_patients = len(df[df["target"] == 1])
 
 st.metric(
