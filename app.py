@@ -32,28 +32,28 @@ with col3:
 # Chart 1
 st.header("Heart Disease Distribution")
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(5, 3))
 sns.countplot(data=df, x="target", ax=ax)
 st.pyplot(fig)
 
 # Chart 2
 st.header("Age Distribution")
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(5, 3))
 sns.histplot(df["age"], bins=15, kde=True, ax=ax)
 st.pyplot(fig)
 
 # Chart 3
 st.header("Cholesterol by Disease Status")
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(5, 3))
 sns.boxplot(data=df, x="target", y="chol", ax=ax)
 st.pyplot(fig)
 
 # Chart 4
 st.header("Age vs Maximum Heart Rate")
 
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(5, 3))
 sns.scatterplot(
     data=df,
     x="age",
@@ -63,12 +63,7 @@ sns.scatterplot(
 )
 st.pyplot(fig)
 
-FIG_SIZE = (5, 3)
 
-fig1, ax1 = plt.subplots(figsize=FIG_SIZE)
-fig2, ax2 = plt.subplots(figsize=FIG_SIZE)
-fig3, ax3 = plt.subplots(figsize=FIG_SIZE)
-fig4, ax4 = plt.subplots(figsize=FIG_SIZE)
 
 age = st.sidebar.slider(
     "Age",
