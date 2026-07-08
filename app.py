@@ -62,3 +62,77 @@ sns.scatterplot(
     ax=ax
 )
 st.pyplot(fig)
+
+
+age = st.sidebar.slider(
+    "Age",
+    20,
+    80,
+    50
+)
+
+
+sex = st.sidebar.selectbox(
+    "Sex",
+    ["Male", "Female"]
+)
+
+chol = st.sidebar.slider(
+    "Cholesterol",
+    100,
+    600,
+    250
+)
+
+cp = st.sidebar.selectbox(
+    "Chest Pain Type",
+    [0,1,2,3]
+)
+
+risk_patients = len(df[df["target"] == 1])
+
+st.metric(
+    "Patients with Heart Disease",
+    risk_patients
+)
+
+st.metric(
+    "Missing Values",
+    int(df.isnull().sum().sum())
+)
+
+
+st.metric(
+    "Duplicate Records",
+    int(df.duplicated().sum())
+)
+
+
+training_mean = df["chol"].mean()
+
+new_dataset_mean = 280
+
+difference = abs(
+    new_dataset_mean - training_mean
+)
+
+st.write(
+    f"Training Mean: {training_mean:.2f}"
+)
+
+st.write(
+    f"New Mean: {new_dataset_mean:.2f}"
+)
+
+st.write(
+    f"Difference: {difference:.2f}"
+)
+
+if difference > 20:
+    st.warning(
+        "Potential Data Drift Detected"
+    )
+else:
+    st.success(
+        "No Significant Data Drift"
+    )
