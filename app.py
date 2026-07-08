@@ -63,6 +63,12 @@ sns.scatterplot(
 )
 st.pyplot(fig)
 
+FIG_SIZE = (5, 3)
+
+fig1, ax1 = plt.subplots(figsize=FIG_SIZE)
+fig2, ax2 = plt.subplots(figsize=FIG_SIZE)
+fig3, ax3 = plt.subplots(figsize=FIG_SIZE)
+fig4, ax4 = plt.subplots(figsize=FIG_SIZE)
 
 age = st.sidebar.slider(
     "Age",
@@ -136,9 +142,5 @@ else:
     st.success(
         "No Significant Data Drift"
     )
-FIG_SIZE = (5, 3)
+    
 
-fig1, ax1 = plt.subplots(figsize=FIG_SIZE)
-fig2, ax2 = plt.subplots(figsize=FIG_SIZE)
-fig3, ax3 = plt.subplots(figsize=FIG_SIZE)
-fig4, ax4 = plt.subplots(figsize=FIG_SIZE)
