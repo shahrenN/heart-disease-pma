@@ -39,7 +39,7 @@ st.pyplot(fig)
 # Chart 2
 st.header("Age Distribution")
 
-fig, ax = plt.subplots(figsize=(4, 3=2))
+fig, ax = plt.subplots(figsize=(4, 2))
 sns.histplot(df["age"], bins=15, kde=True, ax=ax)
 st.pyplot(fig)
 
