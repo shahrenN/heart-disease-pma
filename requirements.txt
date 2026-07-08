@@ -2,4 +2,4 @@ pandas
 scikit-learn
 pytest
 matplotlib
-seaborn dependencies
+seaborn
