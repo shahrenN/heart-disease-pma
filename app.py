@@ -141,3 +141,39 @@ else:
     )
     
 
+# =====================================
+# MONITORING METRICS
+# =====================================
+
+st.header("Monitoring Metrics")
+
+col1, col2 = st.columns(2)
+
+# Metric 1: Model Accuracy
+with col1:
+    st.metric(
+        label="Model Accuracy",
+        value="85.25%"
+    )
+
+# Metric 2: Missing Values
+with col2:
+    st.metric(
+        label="Missing Values",
+        value=int(df.isnull().sum().sum())
+    )
+
+# Description of Metrics
+st.markdown("""
+### Metric Descriptions
+
+**Model Accuracy (Model Performance)**
+- Measures the percentage of correct predictions made by the Random Forest model.
+- Current accuracy: **85.25%**.
+- Higher accuracy indicates better predictive performance.
+
+**Missing Values (Data Quality)**
+- Monitors whether the dataset contains incomplete records.
+- Missing data can reduce model reliability and prediction quality.
+- Current result shows the total number of missing values detected.
+""")
